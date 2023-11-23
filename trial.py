@@ -9,10 +9,6 @@ words = [line.strip() for line in lines]
 # Display the list of words
 print(words)
 
-#f=open("words_train.txt","r")
-#data=f.readline()
-#print(data)
-#words=data.split()
 word=random.choice(words)
 print(word)
 lives=6

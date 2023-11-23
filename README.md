@@ -6,7 +6,9 @@ conda create -n hangman python==3.8 -y
 conda activate hangman
 4.import all the required libraries
 pip install -r requirements.txt
-5.notebook folder created which contains ipynb(jupyter notebook) file to take trial of the logic of the code.
-install the ipykernel before execution of the code
-6.logging exception folder created where two file logging.py and exception.py created for logs and exception handling
-7.setup.py created to import the packages 
+5.setup.py install 
+python setup.py install
+6.setup.py created to import the packages 
+8.code written in trial.py to check the hangman game
+9.write that code in modular coding in hangman.py
+10.Make the app for hangman game using flask in app.py followed by index.html in templates. 
