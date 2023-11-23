@@ -1,10 +1,10 @@
+#import required modules
 import random
 import logging
-# Assuming that image.hangman is a dictionary with hangman images for each life remaining
 import image
 
 logging.basicConfig(level=logging.INFO)
-
+#Read words from given dictionary
 def load_words(file_path):
     try:
         with open(file_path, "r") as file:
@@ -14,11 +14,11 @@ def load_words(file_path):
     except FileNotFoundError:
         logging.error("File not found: %s", file_path)
         raise
-
+#Generate "_" as per the length of words
 def initialize_game(word):
     display = ["_" for _ in range(len(word))]
     return display
-
+#Strategy to play game
 def play_game(word, max_lives):
     lives = max_lives
     display = initialize_game(word)
@@ -49,7 +49,7 @@ def play_game(word, max_lives):
             logging.info("You Win!!")
 
         logging.info(display_hangman(lives))
-
+#check the letter given in right format
 def validate_input(guessed_letter):
     if not guessed_letter.isalpha() or len(guessed_letter) != 1:
         raise ValueError("Invalid input. Please enter a single letter.")
