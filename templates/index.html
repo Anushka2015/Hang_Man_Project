@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+</head>
+<body>
+    <h1>Hangman Game</h1>
+    
+    {% if not game_over %}
+        <p>Word: {{ display|join(' ') }}</p>
+        <p>Lives remaining: {{ lives }}</p>
+        <form method="POST" action="{{ url_for('play') }}">
+            <label for="guessed_letter">Guess a letter:</label>
+            <input type="text" name="guessed_letter" maxlength="1" required>
+            <!-- Add the following hidden fields -->
+            <input type="hidden" name="word" value="{{ word }}">
+            <input type="hidden" name="display" value="{{ display|join(',') }}">
+            <input type="hidden" name="lives" value="{{ lives }}">
+            <button type="submit">Submit Guess</button>
+        </form>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
+
